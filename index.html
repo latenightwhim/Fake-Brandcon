@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브랜드콘 낚시</title>
+
+    <meta property="og:title" content="친구가 보낸 선물이 도착했어요.">
+    <meta property="og:description" content="[상품명]">
+    <meta property="og:image" content="">
+</head>
+<body>
+    <style>
+        body{
+            background-color: snow;
+            font-weight: 800;
+            text-align: center;
+        }
+        div{
+            width: 80vmin;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border: 10px solid crimson;
+            margin: 10px auto;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            width: 50vmin;
+            margin: 30px;
+        }
+        p{
+            font-size: 5vmin;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+
+            border: none;
+            border-radius: 10px;
+            outline: none;
+
+            color:white;
+            background-color: crimson;
+        }
+    </style>
+    <h1>만우절 브랜드콘 낚시</h1>
+
+    <div>    
+        <img src="./illusts/candy.png" alt="">
+        <p>GS25 퍼페티)츄파춥스</p>
+        <span>
+            <button class="copy" product_name="GS25 퍼페티)츄파춥스" url=".">복사하기</button>
+            <button class="share" product_name="GS25 퍼페티)츄파춥스" url=".">공유하기</button>
+        </span>
+    </div>
+    <div>
+        <img src="./illusts/chicken.png" alt="">
+        <p>BBQ)황금올리브치킨+콜라1.25L</p>
+        <span>
+            <button class="copy" product_name="BBQ)황금올리브치킨+콜라1.25L" url=".">복사하기</button>
+            <button class="share" product_name="BBQ)황금올리브치킨+콜라1.25L" url=".">공유하기</button>
+        </span>
+    </div>
+    <div>
+        <img src="./illusts/chocolate.png" alt="">
+        <p>GS25 롯데)가나초콜릿마일드1200</p>
+        <span>
+            <button class="copy" product_name="GS25 롯데)가나초콜릿마일드1200" url=".">복사하기</button>
+            <button class="share" product_name="GS25 롯데)가나초콜릿마일드1200" url=".">공유하기</button>
+        </span>
+    </div>
+    <div>
+        <img src="./illusts/coffee.png" alt="">
+        <p>스타벅스)아이스 카페 아메리카노 T</p>
+        <span>
+            <button class="copy" product_name="스타벅스)아이스 카페 아메리카노 T" url=".">복사하기</button>
+            <button class="share" product_name="스타벅스)아이스 카페 아메리카노 T" url=".">공유하기</button>
+        </span>
+    </div>
+    <div>
+        <img src="./illusts/vitamin.png" alt="">
+        <p>GS25 광동)비타500 100ML</p>
+        <span>
+            <button class="copy" product_name="GS25 광동)비타500 100ML" url=".">복사하기</button>
+            <button class="share" product_name="GS25 광동)비타500 100ML" url=".">공유하기</button>
+        </span>
+    </div>
+    <div>
+        <img src="./illusts/cake.png" alt="">
+        <p>파리바게뜨)클래식 치즈 케이크(조각)</p>
+        <span>
+            <button class="copy" product_name="파리바게뜨)클래식 치즈 케이크(조각)" url=".">복사하기</button>
+            <button class="share" product_name="파리바게뜨)클래식 치즈 케이크(조각)" url=".">공유하기</button>
+        </span>
+    </div>
+
+    <script>
+        function copy(){
+            const product_name = this.getAttribute("product_name")
+            const url = this.getAttribute("url")
+            const text = `친구가 보낸 브랜드콘 선물이 도착했어요!\n링크를 눌러 선물을 받아주세요.\n기한 안에 받지 않으면 자동으로 취소돼요.\n\n• 선물 : ${product_name}\n• 선물 수락 기한 : 2024년 4월 8일 오전 09시까지\n\n선물 받기\n${url}`
+
+            navigator.clipboard.writeText(text)
+        }
+        function share(){
+            const product_name = this.getAttribute("product_name")
+            const url = this.getAttribute("url")
+            const text = `친구가 보낸 브랜드콘 선물이 도착했어요!\n링크를 눌러 선물을 받아주세요.\n기한 안에 받지 않으면 자동으로 취소돼요.\n\n• 선물 : ${product_name}\n• 선물 수락 기한 : 2024년 4월 8일 오전 09시까지\n\n선물 받기\n${url}`
+
+            navigator.share({text: text})
+        }
+        
+        document.querySelectorAll('button.copy').forEach(e => e.addEventListener('click', copy))
+        document.querySelectorAll('button.share').forEach(e => e.addEventListener('click', share))
+    </script>
+</body>
+</html>
